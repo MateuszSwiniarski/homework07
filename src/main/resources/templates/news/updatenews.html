@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+</head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<body>
+<h2>Homework week 07 - news repository</h2>
+
+<p>--------------------------------------------------------------------------------------</p>
+<div class="container">
+    <form th:action="@{/news/update}" th:object="${onenew}" method="post">
+    <div class="row">
+        <div class="col-1">
+            <a>Id</a>
+        </div>
+        <div class="col-10">
+            <input type="text" th:field="*{newsId}" readonly>
+        </div>
+    </div>
+
+<p>--------------------------------------------------------------------------------------</p>
+    <div class="row">
+        <div class="col-1">
+            <a>Author</a>
+        </div>
+        <div class="col-10">
+            <input type="text" class="form-control is-invalid" th:field="*{author}">
+        </div>
+    </div>
+
+<p>--------------------------------------------------------------------------------------</p>
+    <div class="row">
+        <div class="col-1">
+            <a>Title</a>
+        </div>
+        <div class="col-10">
+            <input type="text" th:field="*{title}" readonly>
+        </div>
+    </div>
+
+<p>--------------------------------------------------------------------------------------</p>
+    <div class="row">
+        <div class="col-1">
+            <a>Description</a>
+        </div>
+        <div class="col-10">
+            <input type="text" class="form-control is-invalid" th:field="*{description}">
+        </div>
+    </div>
+<p>--------------------------------------------------------------------------------------</p>
+    <div class="row">
+        <div class="col-1">
+            <a>URL</a>
+        </div>
+        <div class="col-10">
+            <input type="text" th:field="*{url}" readonly>
+        </div>
+    </div>
+<p>--------------------------------------------------------------------------------------</p>
+    <div class="row">
+        <div class="col-1">
+            <a>Published</a>
+        </div>
+        <div class="col-10">
+            <input type="text" th:field="*{published}" readonly>
+        </div>
+    </div>
+    <input type="submit" class="btn btn-primary btn-lg btn-block" value="update news">
+    </form>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<div>
+    <a href="http://localhost:8080/news" class="btn btn-secondary btn-lg btn-block" role="button" aria-pressed="true">Back to news list</a>
+</div>
+</body>
+</html>

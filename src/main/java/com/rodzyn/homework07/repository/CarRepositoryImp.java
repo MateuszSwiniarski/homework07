@@ -74,7 +74,7 @@ public class CarRepositoryImp implements CarRepository {
     }
 
     @Override
-    public List<Cars> getCarByYear(int start, int end) {
+    public List<Cars> getCarByYear(long start, long end) {
         List<Cars> carsListByYears = new ArrayList<>();
         String sql = "SELECT * FROM cars WHERE production_year >=" + start + " AND production_year <= " + end;
         List<Map<String, Object>> maps = jdbcTemplate.queryForList(sql);

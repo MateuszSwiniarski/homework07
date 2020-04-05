@@ -11,6 +11,6 @@ public interface CarRepository {
     void deleteCar(long id);
     void updateCar(Cars newCar);
     Cars getCarById(long id);
-    List<Cars> getCarByYear(int start, int end);
+    List<Cars> getCarByYear(long start, long end);
     void deleteAllCars();
 }

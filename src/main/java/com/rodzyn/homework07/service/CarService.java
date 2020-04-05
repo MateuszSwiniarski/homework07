@@ -6,6 +6,7 @@ import com.rodzyn.homework07.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -43,22 +44,8 @@ public class CarService {
         return carRepository.getCarById(id);
     }
 
-    public List<Cars> getCarsByYears(String start, String end){
-        int numStart;
-        int numEnd;
-
-        try{
-            numStart = Integer.parseInt(start);
-        } catch (NumberFormatException e) {
-            numStart = 2000;
-        }
-
-        try{
-            numEnd = Integer.parseInt(end);
-        } catch (NumberFormatException e) {
-            numEnd = 2020;
-        }
-        return carRepository.getCarByYear(numStart, numEnd);
+    public List<Cars> getCarsByYears(long start, long end){
+        return carRepository.getCarByYear(start, end);
     }
 
     private Range newRange = new Range();
@@ -70,4 +57,5 @@ public class CarService {
     public void setNewRange(Range newRange) {
         this.newRange = newRange;
     }
+
 }

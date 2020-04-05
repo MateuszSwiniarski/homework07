@@ -48,6 +48,12 @@
             <a th:text="${car.getProductionYear()}"/>
         </div>
         <div class="col-1">
+            <a class="btn btn-outline-info" th:href="${'/cars/'+car.carId}" role="button">show</a>
+        </div>
+        <div class="col-1">
+            <a class="btn btn-outline-primary" th:href="${'/cars/update/'+car.carId}" role="button">update</a>
+        </div>
+        <div class="col-1">
             <a class="btn btn-outline-danger" th:href="${'/cars/delete/'+car.carId}" role="button">remove</a>
         </div>
     </div>
@@ -56,7 +62,7 @@
     <form th:action="@{/cars}" th:object="${addCar}" method="post">
         <div class="row">
             <div class="col-1">
-                <input type="text" th:field="*{carId}"/>
+                <input type="number" th:field="*{carId}"/>
             </div>
             <div class="col-2">
                 <input type="text" th:field="*{mark}"/>
@@ -68,7 +74,7 @@
                 <input type="text" th:field="*{color}"/>
             </div>
             <div class="col-1">
-                <input type="text" th:field="*{productionYear}"/>
+                <input type="number" th:field="*{productionYear}"/>
             </div>
         </div>
         <br>

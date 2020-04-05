@@ -53,6 +53,23 @@ public class CarController {
         return "redirect:/cars";
     }
 
+    @GetMapping("/{id}")
+    public String getCarById(@PathVariable("id") long id, Model model){
+        model.addAttribute("onecar", carService.getCarById(id));
+        return "cars/onecar";
+    }
+
+    @GetMapping("/update/{id}")
+    public String updateCarById(@PathVariable("id") long id, Model model){
+        model.addAttribute("updatecar", carService.getCarById(id));
+        return "cars/updatecar";
+    }
+
+    @PostMapping("/update")
+    private String updateCarbyId(@ModelAttribute Cars updateCar){
+        carService.updateCar(updateCar);
+        return "redirect:/cars";
+    }
 
 
 }

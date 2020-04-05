@@ -12,8 +12,8 @@
 <h2>Homework week 07 - car repositorium</h2>
 <p>Please insert production of years to find interested cars</p>
 <form th:action="@{/cars/years}" th:object="${range}" method="post">
-    <p>Start range: <input type="text" th:field="*{start}"></p>
-    <p>End range  :<input type="text" th:field="*{end}"></p>
+    <p>Start range: <input type="number" th:field="*{start}"></p>
+    <p>End range  :<input type="number" th:field="*{end}"></p>
     <p><input type="submit" value="search"></p>
 </form>
 <div class="container">
